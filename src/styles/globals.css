@@ -1,3 +1,119 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.custom-wrapper1 {
+  border: 2px solid #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  height: 100vh;
+  flex-direction: column;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.custom-wrapper1 h1 {
+  font-size: 2rem;
+  color: #333333;
+  margin-bottom: 20px;
+}
+
+.custom-wrapper1 button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: #ffffff;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.custom-wrapper1 button:hover {
+  background-color: #45a049;
+}
+
+.custom-wrapper1 button:disabled {
+  background-color: #888;
+  cursor: not-allowed;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #333333;
+  color: #ffffff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer .footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer .footer-links {
+  margin-top: 10px;
+}
+
+.footer .footer-link {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer .footer-link:hover {
+  text-decoration: underline;
+}
+
+/* Contact Section */
+.contact-section {
+  background-color: #f9f9f9;
+  padding: 40px;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.contact-section form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-section form div {
+  margin-bottom: 10px;
+}
+
+.contact-section form label {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.contact-section form input,
+.contact-section form textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.contact-section form button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contact-section form button:hover {
+  background-color: #45a049;
+}
