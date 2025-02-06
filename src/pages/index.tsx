@@ -20,7 +20,7 @@ const Home: NextPage = () => {
   return (
     <div>
       <head>
-        <title>Cardano Wallet Integration</title>
+        <title>Gamefi</title>
         <meta name="description" content="Connect and interact with Cardano Wallet" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
@@ -30,7 +30,7 @@ const Home: NextPage = () => {
         {/* Header */}
         <header className="header">
           <div className="header-content">
-            <h1>Cardano Wallet Integration</h1>
+            <h1>Gamefi</h1>
             <nav className="header-nav">
               <a href="#home" className="header-link">Home</a>
               <a href="#about" className="header-link">About</a>
