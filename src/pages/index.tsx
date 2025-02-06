@@ -28,7 +28,6 @@ const Home: NextPage = () => {
       </head>
 
       <body>
-<<<<<<< HEAD
         <nav className="navbar">
           <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
             ☰
@@ -46,25 +45,6 @@ const Home: NextPage = () => {
             <CardanoWallet label="Connect Wallet" isDark={true} />
           </div>
         </nav>
-=======
-        {/* Header */}
-        <header className="header">
-          <div className="header-content">
-            <h1>Gamefi</h1>
-            <nav className="header-nav">
-              <a href="#home" className="header-link">Home</a>
-              <a href="#about" className="header-link">About</a>
-              <a href="#services" className="header-link">Services</a>
-              <a href="#contact" className="header-link">Contact</a>
-            </nav>
-          </div>
-        </header>
-
-        <div className="custom-wrapper1">
-          <h1>Connect Wallet</h1><br />
-          <CardanoWallet label="Connect Wallet" isDark={true} />
-        </div>
->>>>>>> ffe80cb6f534e30146ec16c449b22ac4cf4b493c
 
         {connected && (
           <>
@@ -124,9 +104,4 @@ const Home: NextPage = () => {
     </div>
   );
 };
-<<<<<<< HEAD
 export default Home;
-=======
-
-export default Home;
->>>>>>> ffe80cb6f534e30146ec16c449b22ac4cf4b493c
