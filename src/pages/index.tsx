@@ -27,6 +27,19 @@ const Home: NextPage = () => {
       </head>
 
       <body>
+        {/* Header */}
+        <header className="header">
+          <div className="header-content">
+            <h1>Cardano Wallet Integration</h1>
+            <nav className="header-nav">
+              <a href="#home" className="header-link">Home</a>
+              <a href="#about" className="header-link">About</a>
+              <a href="#services" className="header-link">Services</a>
+              <a href="#contact" className="header-link">Contact</a>
+            </nav>
+          </div>
+        </header>
+
         <div className="custom-wrapper1">
           <h1>Connect Wallet</h1><br />
           <CardanoWallet label="Connect Wallet" isDark={true} />

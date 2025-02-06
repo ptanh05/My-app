@@ -2,6 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Header Styles */
+.header {
+  background-color: #4CAF50;
+  color: #ffffff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.header .header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header .header-nav {
+  display: flex;
+  gap: 20px;
+}
+
+.header .header-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.header .header-link:hover {
+  text-decoration: underline;
+}
+
 .custom-wrapper1 {
   border: 2px solid #ffffff;
   padding: 20px;
