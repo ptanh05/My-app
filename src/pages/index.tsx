@@ -47,14 +47,15 @@ const Home: NextPage = () => {
       <body>
         <nav className="navbar">
 
-        <Image src="/img/Bruhtato.jpg" alt="Bruhtato" width={50} height={50} />
-          
+        <div className="logo-container">
+          <Image src="/img/Bruhtato.jpg" alt="Bruhtato" width={50} height={50} />
           <h1>Bruhtato</h1>
+        </div>
 
           <div className={`navbar-left ${menuOpen ? "open" : ""}`}>
             <ul className="navbar-links">
               <li><a href="#">HOME</a></li>
-              <li><a href="#">BRIDGE</a></li>
+              <li><a href="#">EVENT</a></li>
               <li><a href="#">MARKETPLACE</a></li>
             </ul>
           </div>
@@ -94,38 +95,6 @@ const Home: NextPage = () => {
           </>
         )}
 
-
-        {/* Contact Section */}
-        <section className="contact-section">
-          <h2>Contact Us</h2>
-          <form className="contact-form">
-            <div className="form-group">
-              <label htmlFor="name">Name</label>
-              <input type="text" id="name" name="name" required />
-            </div>
-            <div className="form-group">
-              <label htmlFor="email">Email</label>
-              <input type="email" id="email" name="email" required />
-            </div>
-            <div className="form-group">
-              <label htmlFor="message">Message</label>
-              <textarea id="message" name="message" rows={4} required></textarea>
-            </div>
-            <button type="submit" className="submit-button">Send Message</button>
-          </form>
-        </section>
-
-        {/* Footer */}
-        <footer className="footer">
-          <div className="footer-content">
-            <p className="footer-text">&copy; 2025 Cardano Wallet Integration. All rights reserved.</p>
-            <div className="footer-links">
-              <a href="#privacy-policy" className="footer-link">Privacy Policy</a>
-              <span className="footer-separator">|</span>
-              <a href="#terms-of-service" className="footer-link">Terms of Service</a>
-            </div>
-          </div>
-        </footer>
       </body>
     </div>
   );

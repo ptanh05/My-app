@@ -6,16 +6,12 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-logo">
-          <h2>YOUR LOGO</h2>
+          <h2>BRUHTATO</h2>
         </div>
         <div className="footer-links">
-          <a href="#">Xuất bản</a>
-          <a href="#">Câu chuyện</a>
-          <a href="#">Trò chơi</a>
-          <a href="#">Trò chơi trên web</a>
-          <a href="#">Nghề nghiệp</a>
-          <a href="#">Ủng hộ</a>
-          <a href="#">Tài khoản</a>
+          <a href="#">Publishing</a>
+          <a href="#">Stories</a>
+          <a href="#">Web Games</a>
         </div>
         <div className="footer-social">
           <FaTwitter />
@@ -27,15 +23,16 @@ const Footer = () => {
           <FaGithub />
         </div>
         <div className="footer-policies">
-          <a href="#">Điều khoản và điều kiện</a>
-          <a href="#">Chính sách bảo mật</a>
-          <a href="#">Chính sách về nội dung và hành vi</a>
-          <a href="#">Chính sách Cookie</a>
-          <a href="#">Cài đặt quyền riêng tư</a>
+          <a href="#">Terms and Conditions</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Content and Behavior Policy</a>
+          <a href="#">Cookie Policy</a>
+          <a href="#">Privacy Settings</a>
         </div>
         <p className="footer-text">&copy; 2025 YOUR COMPANY. All rights reserved.</p>
       </div>
     </footer>
+
   );
 };
 
