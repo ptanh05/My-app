@@ -28,6 +28,7 @@ const Footer = () => {
           <a href="#">Content and Behavior Policy</a>
           <a href="#">Cookie Policy</a>
           <a href="#">Privacy Settings</a>
+          <a href="#">Privacy Settings</a>
         </div>
         <p className="footer-text">&copy; 2025 YOUR COMPANY. All rights reserved.</p>
       </div>
