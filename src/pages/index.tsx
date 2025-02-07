@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import type { NextPage } from "next";
 import { useWallet } from "@meshsdk/react";
 import { CardanoWallet } from "@meshsdk/react";
@@ -6,8 +6,9 @@ import { CardanoWallet } from "@meshsdk/react";
 const Home: NextPage = () => {
   const { connected, wallet } = useWallet();
   const [assets, setAssets] = useState<null | any>(null);
+  const [walletAddress, setWalletAddress] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
-  const [menuOpen, setMenuOpen] = useState(false); // Thêm state cho menu
+  const [menuOpen, setMenuOpen] = useState(false);
 
   async function getAssets() {
     if (wallet) {
@@ -17,6 +18,21 @@ const Home: NextPage = () => {
       setLoading(false);
     }
   }
+
+  async function getWalletAddress() {
+    if (wallet) {
+      const addresses = await wallet.getUsedAddresses();
+      if (addresses.length > 0) {
+        setWalletAddress(addresses[0]); // Lấy địa chỉ đầu tiên
+      }
+    }
+  }
+
+  useEffect(() => {
+    if (connected) {
+      getWalletAddress();
+    }
+  }, [connected]);
 
   return (
     <div>
@@ -28,46 +44,55 @@ const Home: NextPage = () => {
       </head>
 
       <body>
-        <nav className="navbar">
-          <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
-            ☰
-          </button>
-          <div className={`navbar-left ${menuOpen ? "open" : ""}`}>
-            <ul className="navbar-links">
-              <li><a href="#">INVENTORY</a></li>
-              <li><a href="#">BRIDGE</a></li>
-              <li><a href="#">MARKETPLACE</a></li>
-              <li><a href="#">MERCH STORE</a></li>
-              <li><a href="#">MY PROFILE</a></li>
-            </ul>
-          </div>
-          <div className="navbar-right">
-            <CardanoWallet label="Connect Wallet" isDark={true} />
-          </div>
-        </nav>
+      <nav className="navbar">
 
-        {connected && (
-          <>
-            <h1>Get Wallet Assets</h1>
-            {assets ? (
-              <pre>
-                <code className="language-js">{JSON.stringify(assets, null, 2)}</code>
-              </pre>
-            ) : (
-              <button
-                type="button"
-                onClick={() => getAssets()}
-                disabled={loading}
-                style={{
-                  margin: "8px",
-                  backgroundColor: loading ? "orange" : "grey",
-                }}
-              >
-                Get Wallet Assets
-              </button>
-            )}
-          </>
-        )}
+       
+          <img src="/logo.svg" alt="logo" />
+          <h1>Bruhtato</h1>
+        
+        <div className={`navbar-left ${menuOpen ? "open" : ""}`}>
+          <ul className="navbar-links">
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">BRIDGE</a></li>
+            <li><a href="#">MARKETPLACE</a></li>
+          </ul>
+        </div>
+        
+        <div className="navbar-right flex items-center space-x-4">
+          {/* Hiển thị địa chỉ ví nếu đã kết nối */}
+          {connected && walletAddress && (
+            <span className="text-sm bg-gray-200 px-3 py-1 rounded-lg">
+              {walletAddress.slice(0, 6) + "..." + walletAddress.slice(-6)}
+            </span>
+          )}
+
+          {/* Nút Connect Wallet */}
+          <CardanoWallet label="Connect Wallet" isDark={true} />
+        </div>
+      </nav>
+
+      {connected && (
+        <>
+          {assets ? (
+            <pre>
+              <code className="language-js">{JSON.stringify(assets, null, 2)}</code>
+            </pre>
+          ) : (
+            <button
+              type="button"
+              onClick={() => getAssets()}
+              disabled={loading}
+              style={{
+                margin: "8px",
+                backgroundColor: loading ? "orange" : "grey",
+              }}
+            >
+              
+            </button>
+          )}
+        </>
+      )}
+
 
         {/* Contact Section */}
         <section className="contact-section">
@@ -104,4 +129,5 @@ const Home: NextPage = () => {
     </div>
   );
 };
+
 export default Home;
