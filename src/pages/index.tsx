@@ -49,7 +49,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Brutato Games - Epic Cardano Gaming Experience</title>
+        <title>Brutato - Epic Cardano Gaming Experience</title>
         <meta
           name="description"
           content="Dive into the world of Brutato Games, where Cardano blockchain meets epic gaming adventures. Connect your wallet and start your journey now!"
