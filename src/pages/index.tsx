@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Image from 'next/image';
 import type { NextPage } from "next";
 import { useWallet } from "@meshsdk/react";
 import { CardanoWallet } from "@meshsdk/react";
@@ -44,54 +45,55 @@ const Home: NextPage = () => {
       </head>
 
       <body>
-      <nav className="navbar">
+        <nav className="navbar">
 
-       
-          <img src="/logo.svg" alt="logo" />
+        <Image src="/img/68f32c85391b8645df0a.jpg" alt="Bruhtato" width={50} height={50} />
+
+          
           <h1>Bruhtato</h1>
-        
-        <div className={`navbar-left ${menuOpen ? "open" : ""}`}>
-          <ul className="navbar-links">
-            <li><a href="#">HOME</a></li>
-            <li><a href="#">BRIDGE</a></li>
-            <li><a href="#">MARKETPLACE</a></li>
-          </ul>
-        </div>
-        
-        <div className="navbar-right flex items-center space-x-4">
-          {/* Hiển thị địa chỉ ví nếu đã kết nối */}
-          {connected && walletAddress && (
-            <span className="text-sm bg-gray-200 px-3 py-1 rounded-lg">
-              {walletAddress.slice(0, 6) + "..." + walletAddress.slice(-6)}
-            </span>
-          )}
 
-          {/* Nút Connect Wallet */}
-          <CardanoWallet label="Connect Wallet" isDark={true} />
-        </div>
-      </nav>
+          <div className={`navbar-left ${menuOpen ? "open" : ""}`}>
+            <ul className="navbar-links">
+              <li><a href="#">HOME</a></li>
+              <li><a href="#">BRIDGE</a></li>
+              <li><a href="#">MARKETPLACE</a></li>
+            </ul>
+          </div>
 
-      {connected && (
-        <>
-          {assets ? (
-            <pre>
-              <code className="language-js">{JSON.stringify(assets, null, 2)}</code>
-            </pre>
-          ) : (
-            <button
-              type="button"
-              onClick={() => getAssets()}
-              disabled={loading}
-              style={{
-                margin: "8px",
-                backgroundColor: loading ? "orange" : "grey",
-              }}
-            >
-              
-            </button>
-          )}
-        </>
-      )}
+          <div className="navbar-right flex items-center space-x-4">
+            {/* Hiển thị địa chỉ ví nếu đã kết nối */}
+            {connected && walletAddress && (
+              <span className="text-sm bg-gray-200 px-3 py-1 rounded-lg">
+                {walletAddress.slice(0, 6) + "..." + walletAddress.slice(-6)}
+              </span>
+            )}
+
+            {/* Nút Connect Wallet */}
+            <CardanoWallet label="Connect Wallet" isDark={true} />
+          </div>
+        </nav>
+
+        {connected && (
+          <>
+            {assets ? (
+              <pre>
+                <code className="language-js">{JSON.stringify(assets, null, 2)}</code>
+              </pre>
+            ) : (
+              <button
+                type="button"
+                onClick={() => getAssets()}
+                disabled={loading}
+                style={{
+                  margin: "8px",
+                  backgroundColor: loading ? "orange" : "grey",
+                }}
+              >
+
+              </button>
+            )}
+          </>
+        )}
 
 
         {/* Contact Section */}
