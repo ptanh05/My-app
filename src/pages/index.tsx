@@ -47,8 +47,7 @@ const Home: NextPage = () => {
       <body>
         <nav className="navbar">
 
-        <Image src="/img/68f32c85391b8645df0a.jpg" alt="Bruhtato" width={50} height={50} />
-
+        <Image src="/img/Bruhtato.jpg" alt="Bruhtato" width={50} height={50} />
           
           <h1>Bruhtato</h1>
 
