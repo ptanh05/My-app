@@ -3,7 +3,6 @@ import Image from 'next/image';
 import type { NextPage } from "next";
 import { useWallet } from "@meshsdk/react";
 import { CardanoWallet } from "@meshsdk/react";
-
 const Home: NextPage = () => {
   const { connected, wallet } = useWallet();
   const [assets, setAssets] = useState<null | any>(null);

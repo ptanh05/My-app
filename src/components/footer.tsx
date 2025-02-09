@@ -33,8 +33,6 @@ const Footer = () => {
         <p className="footer-text">&copy; 2025 YOUR COMPANY. All rights reserved.</p>
       </div>
     </footer>
-
   );
 };
-
 export default Footer;
