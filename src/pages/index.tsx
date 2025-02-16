@@ -54,8 +54,8 @@ const Home: NextPage = () => {
           <div className={`navbar-left ${menuOpen ? "open" : ""}`}>
             <ul className="navbar-links">
               <li><a href="#">HOME</a></li>
-              <li><a href="#">UPDATE NOTES</a></li>
-              <li><a href="#">MARKETPLACE</a></li>
+              <li><a href="#">CREATE</a></li>
+              <li><a href="#">LIST TO MARKET</a></li>
             </ul>
           </div>
 
