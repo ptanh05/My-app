@@ -3,6 +3,7 @@ import Image from 'next/image';
 import type { NextPage } from "next";
 import { useWallet } from "@meshsdk/react";
 import { CardanoWallet } from "@meshsdk/react";
+import Link from 'next/link';
 const Home: NextPage = () => {
   const { connected, wallet } = useWallet();
   const [assets, setAssets] = useState<null | any>(null);
@@ -55,7 +56,7 @@ const Home: NextPage = () => {
             <ul className="navbar-links">
               <li><a href="#">HOME</a></li>
               <li><a href="#">CREATE</a></li>
-              <li><a href="#">LIST TO MARKET</a></li>
+              <li><a href="/market" target="_blank">LIST TO MARKET</a></li>
             </ul>
           </div>
 
