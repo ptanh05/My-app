@@ -75,3 +75,74 @@
     border-radius: 0.5rem;
     transition: all 0.3s ease;
 }
+.cta-button {
+    padding: 0.75rem 2rem;
+    background-color: #fbbf24;
+    color: black;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .cta-button:hover {
+    background-color: #f59e0b;
+    transform: translateY(-1px);
+  }
+  
+  .market-container {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    padding: 24px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+    background-color: black;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    color: white;
+  }
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 24px;
+    font-weight: 600;
+  }
+  
+  .header-right {
+    display: flex;
+    gap: 12px;
+  }
+  
+  .button {
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .button-outline {
+    border: 1px solid #ced4da;
+    background: white;
+    color: #343a40;
+  }
+  
+  .button-dark {
+    background: #495057;
+    color: white;
+    border: none;
+  }
+  
+  

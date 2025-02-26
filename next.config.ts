@@ -8,6 +8,16 @@ const nextConfig = {
     };
     return config;
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'hebbkx1anhila5yf.public.blob.vercel-storage.com',
+        port: '', // Để trống nếu không có port cụ thể
+        pathname: '/**', // Cho phép tất cả các đường dẫn
+      },
+    ],
+  },
 };
 
 export default nextConfig;

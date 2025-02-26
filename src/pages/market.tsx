@@ -1,121 +1,142 @@
-import React from 'react';
+"use client"
 
-const Market: React.FC = () => {
-  // Sample items to display
-  const items = [
-    { id: 1, name: 'Epic Sword', rarity: 'Epic', image: '⚔️' },
-    { id: 2, name: 'Legendary Shield', rarity: 'Legendary', image: '🛡️' },
-    { id: 3, name: 'Rare Potion', rarity: 'Rare', image: '🧪' },
-    { id: 4, name: 'Mythical Armor', rarity: 'Mythical', image: '🦺' },
-    { id: 5, name: 'Common Bow', rarity: 'Common', image: '🏹' },
-    { id: 6, name: 'Ancient Tome', rarity: 'Epic', image: '📜' },
-  ];
+import { useState } from "react"
+import { Wallet, Gamepad2, Sword, Users, Swords } from "lucide-react"
+
+export default function MarketplacePage() {
+  const [isWalletConnected, setIsWalletConnected] = useState(false)
 
   return (
     <div className="market-container">
-      <div className="header">
-        <div className="header-left">
-          <span className="icon">🎮</span>
-          <h1>GameFi Marketplace</h1>
+      {/* Header */}
+      <div className="market-header">
+        <div className="market-title">
+          <Gamepad2 className="h-6 w-6" />
+          <span>GameFi Marketplace</span>
         </div>
-        <div className="header-right">
-          <button className="button button-outline">Connect Wallet</button>
-          <button className="button button-dark">Sell Item</button>
+        <div className="market-actions">
+          <button className="market-button outline">
+            <Wallet className="h-4 w-4" />
+            Connect Wallet
+          </button>
+          <button className="market-button dark">
+            <Sword className="h-4 w-4" />
+            Sell Item
+          </button>
         </div>
       </div>
 
-      <div className="content">
-        <div className="stats-row">
-          <div className="stat-card">
-            <div className="stat-icon">👥</div>
-            <div className="stat-info">
-              <span>Active Players</span>
-              <h2>125,431</h2>
-            </div>
-          </div>
-          <div className="stat-card">
-            <div className="stat-icon">📦</div>
-            <div className="stat-info">
-              <span>Items Listed</span>
-              <h2>{items.length}</h2>
-            </div>
+      {/* Stats */}
+      <div className="stats-container">
+        <div className="stat-card">
+          <Users className="h-6 w-6 text-blue-500" />
+          <div>
+            <div className="stat-label">Active Players</div>
+            <div className="stat-value">125,431</div>
           </div>
         </div>
-
-        <div className="main-grid">
-          <div className="sidebar-overlay">
-            <div className="sidebar">
-              <h2>Categories</h2>
-              <div className="category-grid">
-                <button className="category-button">
-                  <span className="icon">🎮</span>
-                  <span>All Items</span>
-                </button>
-                <button className="category-button">
-                  <span className="icon">⚔️</span>
-                  <span>Weapons</span>
-                </button>
-                <button className="category-button">
-                  <span className="icon">🛡️</span>
-                  <span>Armor</span>
-                </button>
-                <button className="category-button">
-                  <span className="icon">👑</span>
-                  <span>Legendary</span>
-                </button>
-                <button className="category-button">
-                  <span className="icon">💎</span>
-                  <span>Resources</span>
-                </button>
-                <button className="category-button">
-                  <span className="icon">⭐</span>
-                  <span>Characters</span>
-                </button>
-              </div>
-            </div>
-
-            <div className="filters">
-              <h2>Search & Filters</h2>
-              <div className="search-box">
-                <span className="search-icon">🔍</span>
-                <input type="text" placeholder="Search game items..." />
-              </div>
-              
-              <div className="filter-group">
-                <label>Rarity</label>
-                <select>
-                  <option value="">Select rarity</option>
-                  <option value="mythical">Mythical</option>
-                  <option value="epic">Epic</option>
-                  <option value="rare">Rare</option>
-                  <option value="legendary">Legendary</option>
-                </select>
-              </div>
-
-              <button className="button button-dark filter-apply">
-                <span className="icon">🔍</span>
-                Apply Filters
-              </button>
-            </div>
+        <div className="stat-card">
+          <Swords className="h-6 w-6 text-green-500" />
+          <div>
+            <div className="stat-label">Items Listed</div>
+            <div className="stat-value">0</div> {/* Không có item nào */}
           </div>
+        </div>
+      </div>
 
-          {/* Items List Section */}
-          <div className="items-list">
-            <h2>Items</h2>
-            <ul>
-              {items.map(item => (
-                <li key={item.id} className="item-card">
-                  <span className="item-icon">{item.image}</span>
-                  <span className="item-name">{item.name}</span>
-                  <span className="item-rarity">{item.rarity}</span>
-                </li>
+      {/* Main Content */}
+      <div className="market-layout">
+        {/* Sidebar */}
+        <div className="market-sidebar">
+          {/* Categories */}
+          <div className="sidebar-section">
+            <h2 className="sidebar-title">Categories</h2>
+            <div className="category-list">
+              {categories.map((category) => (
+                <button key={category.name} className="category-item">
+                  {category.icon}
+                  <span>{category.name}</span>
+                </button>
               ))}
-            </ul>
+            </div>
+          </div>
+
+          {/* Filters */}
+          <div className="sidebar-section">
+            <h2 className="sidebar-title">Search & Filters</h2>
+
+            <div className="search-wrapper">
+              <input type="text" placeholder="Search game items..." className="search-input" />
+            </div>
+
+            <div className="filter-group">
+              <label className="filter-label">Rarity</label>
+              <select className="filter-select">
+                <option value="">Select rarity</option>
+                <option value="common">Common</option>
+                <option value="rare">Rare</option>
+                <option value="epic">Epic</option>
+                <option value="legendary">Legendary</option>
+              </select>
+            </div>
+
+            <div className="filter-group">
+              <label className="filter-label">Price Range (GOLD)</label>
+              <input type="range" min="0" max="10000" className="range-slider" />
+              <div className="range-values">
+                <span>0</span>
+                <span>10,000</span>
+              </div>
+            </div>
+
+            <div className="filter-group">
+              <label className="filter-label">Level Range</label>
+              <input type="range" min="0" max="100" className="range-slider" />
+              <div className="range-values">
+                <span>0</span>
+                <span>100</span>
+              </div>
+            </div>
+
+            <button className="market-button dark w-full">Apply Filters</button>
           </div>
         </div>
+
+        {/* Items Grid (Ẩn nếu không có items) */}
+        {items.length > 0 ? (
+          <div className="items-grid">
+            {items.map((item, i) => (
+              <div key={i} className="item-card">
+                <div className="item-image">
+                  <span className="item-level">Level {item.level}</span>
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="item-content">
+                  <div className="item-header">
+                    <h3 className="item-title">{item.name}</h3>
+                    <p className="item-type">{item.type}</p>
+                  </div>
+                  <span className={`rarity-badge rarity-${item.rarity.toLowerCase()}`}>{item.rarity}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p className="text-center text-gray-500">No items available</p>
+        )}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Market;
+const categories = [
+  { name: "Weapons", icon: <Sword className="h-4 w-4" /> },
+  { name: "Armor", icon: <Users className="h-4 w-4" /> },
+  { name: "Legendary", icon: <Swords className="h-4 w-4" /> }
+]
+
+const items = [] // Đảm bảo không có item nào hiển thị
